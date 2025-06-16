@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://butc3tcibnwvv"]
+
+[ext_resource type="Script" uid="uid://nh7w54v546xr" path="res://Scenes/spork_rotation/spork_rotator.gd" id="1_q7hob"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_iti4p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dtjkg"]
+albedo_color = Color(0.360949, 0.360949, 0.360949, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3up8h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qh4ij"]
+albedo_color = Color(0.394987, 0.394987, 0.394987, 1)
+
+[node name="spork_model" type="MeshInstance3D"]
+transform = Transform3D(0.976672, 0.441281, 0, -0.214735, 2.00706, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_iti4p")
+surface_material_override/0 = SubResource("StandardMaterial3D_dtjkg")
+script = ExtResource("1_q7hob")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.54, 0, 0, 0, 0.56, 0, 0, 0, 0.985, 4.02331e-09, 0.912247, 0)
+mesh = SubResource("BoxMesh_3up8h")
+surface_material_override/0 = SubResource("StandardMaterial3D_qh4ij")

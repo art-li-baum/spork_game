@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cim1emjqj8pbd"]
+
+[ext_resource type="Script" uid="uid://dccvolv77h3h0" path="res://Scenes/globals/rotation_manager.gd" id="1_87ivo"]
+
+[node name="RotationManager" type="Node"]
+script = ExtResource("1_87ivo")

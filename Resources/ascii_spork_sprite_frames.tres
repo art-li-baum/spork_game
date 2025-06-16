@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://be7q6ghdd71h7"]
+
+[ext_resource type="Texture2D" uid="uid://bvxv6d8c3ty3s" path="res://ArtAssets/sporks/ascii_spork/ascii-art1.png" id="1_lr8rk"]
+[ext_resource type="Texture2D" uid="uid://dxe0sov5k3i8u" path="res://ArtAssets/sporks/ascii_spork/ascii-art2.png" id="2_8r033"]
+[ext_resource type="Texture2D" uid="uid://bm3gffkf1bcfg" path="res://ArtAssets/sporks/ascii_spork/ascii-art3.png" id="3_bnqei"]
+[ext_resource type="Texture2D" uid="uid://07f2dx11t0qh" path="res://ArtAssets/sporks/ascii_spork/ascii-art4.png" id="4_6xyks"]
+[ext_resource type="Texture2D" uid="uid://dijdpejefxisi" path="res://ArtAssets/sporks/ascii_spork/ascii-art5.png" id="5_asjrm"]
+[ext_resource type="Texture2D" uid="uid://bn3gn5fg0d5dc" path="res://ArtAssets/sporks/ascii_spork/ascii-art6.png" id="6_21e58"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lr8rk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8r033")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bnqei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6xyks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_asjrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_21e58")
+}],
+"loop": true,
+"name": &"rotate",
+"speed": 5.0
+}]
