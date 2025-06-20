@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://brmbq282lsmiq"]
+
+[ext_resource type="Script" uid="uid://d8mi0kq8tno1" path="res://Scenes/shop/shop_panel.gd" id="1_ow611"]
+[ext_resource type="Theme" uid="uid://cbjrsujbntlxe" path="res://Resources/ascii_ui_theme.tres" id="1_q2v6f"]
+[ext_resource type="Texture2D" uid="uid://cs4ndigto3rps" path="res://ArtAssets/Dopamine Shop/Door.png" id="1_t1kjg"]
+[ext_resource type="Texture2D" uid="uid://r1plmyuk7c74" path="res://ArtAssets/Dopamine Shop/Door2.png" id="2_ow611"]
+[ext_resource type="Texture2D" uid="uid://2y511vwkwqrr" path="res://ArtAssets/Dopamine Shop/Knock.png" id="4_4eqtj"]
+[ext_resource type="PackedScene" uid="uid://bydwnaed1mh16" path="res://Scenes/shop/store.tscn" id="6_q2v6f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2v6f"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="ShopPanel" type="Panel" node_paths=PackedStringArray("closed_door_button", "closed_door", "knock1", "knock2", "bang", "shop", "shop_inv")]
+offset_left = 692.0
+offset_top = 155.0
+offset_right = 1260.0
+offset_bottom = 614.0
+theme = ExtResource("1_q2v6f")
+theme_override_styles/panel = SubResource("StyleBoxFlat_q2v6f")
+script = ExtResource("1_ow611")
+closed_door_button = NodePath("DoorButton")
+closed_door = NodePath("ClosedDoor")
+knock1 = NodePath("ClosedDoor/TextureRect")
+knock2 = NodePath("ClosedDoor/TextureRect2")
+bang = NodePath("OpenFX")
+shop = NodePath("Store")
+shop_inv = NodePath("Store")
+
+[node name="DoorButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.512
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -92.5
+offset_right = -57.544
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ClosedDoor" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 37.0
+offset_right = 431.0
+offset_bottom = 366.0
+mouse_filter = 2
+texture = ExtResource("1_t1kjg")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="ClosedDoor"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("4_4eqtj")
+
+[node name="TextureRect2" type="TextureRect" parent="ClosedDoor"]
+visible = false
+layout_mode = 0
+offset_left = 49.0
+offset_top = -46.0
+offset_right = 455.0
+offset_bottom = 283.0
+mouse_filter = 2
+texture = ExtResource("4_4eqtj")
+
+[node name="OpenFX" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 88.0
+offset_top = 106.0
+offset_right = 370.0
+offset_bottom = 300.0
+mouse_filter = 2
+texture = ExtResource("2_ow611")
+expand_mode = 1
+
+[node name="Store" parent="." instance=ExtResource("6_q2v6f")]
+visible = false
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 572.0
+offset_bottom = 347.0
+
+[connection signal="pressed" from="DoorButton" to="." method="knock_on_door"]

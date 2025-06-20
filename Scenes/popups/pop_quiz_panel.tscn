@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://i5r5b0yutkuw"]
+
+[ext_resource type="Theme" uid="uid://cbjrsujbntlxe" path="res://Resources/ascii_ui_theme.tres" id="1_yyunw"]
+[ext_resource type="Script" uid="uid://b0033rnngv7bi" path="res://Scenes/popups/pop_quiz_panel.gd" id="2_nkfwh"]
+[ext_resource type="FontFile" uid="uid://bprhhpkjayd2l" path="res://ArtAssets/fonts/Windows Regular.ttf" id="3_6lmav"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkfwh"]
+content_margin_left = 9.0
+bg_color = Color(0.00392157, 0, 0.501961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="PopQuizPanel" type="Panel"]
+offset_left = 353.0
+offset_top = 240.0
+offset_right = 615.0
+offset_bottom = 458.0
+theme = ExtResource("1_yyunw")
+script = ExtResource("2_nkfwh")
+
+[node name="popup_textbar" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 24.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_6lmav")
+theme_override_font_sizes/normal_font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_nkfwh")
+text = "POP QUIZ"
+
+[node name="question" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -49.0
+offset_right = 94.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_6lmav")
+theme_override_font_sizes/normal_font_size = 24
+text = "What is  2 + 2 ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="answer" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 149.0
+offset_right = 197.0
+offset_bottom = 180.0
+placeholder_text = " type answer"
+caret_blink = true
+
+[connection signal="text_submitted" from="answer" to="." method="check_answer"]

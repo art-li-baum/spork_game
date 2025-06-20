@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Aesthetic" load_steps=6 format=3 uid="uid://d4c2qnvyjjakh"]
+
+[ext_resource type="Texture2D" uid="uid://bfiposoer2wrd" path="res://ArtAssets/backgrounds/Upgrade4_Background_Cute.png" id="1_axflu"]
+[ext_resource type="Texture2D" uid="uid://c2w7ca4nxsihd" path="res://ArtAssets/pointers/Upgrade6_PointerCute.png" id="2_jq4pp"]
+[ext_resource type="Script" uid="uid://bfgww8kjlvced" path="res://Resources/aesthetics/aesthetic.gd" id="3_qth73"]
+[ext_resource type="Texture2D" uid="uid://3hpmwmfteuw6" path="res://ArtAssets/titles/Upgrade2_Subtitle_Cute.png" id="4_he4ju"]
+[ext_resource type="Texture2D" uid="uid://df0wwchrvijo4" path="res://ArtAssets/titles/Upgrade1_Title_Cute.png" id="5_fo2be"]
+
+[resource]
+script = ExtResource("3_qth73")
+background = ExtResource("1_axflu")
+ham_gif_path = ""
+pointer = ExtResource("2_jq4pp")
+title = ExtResource("5_fo2be")
+sub_title = ExtResource("4_he4ju")

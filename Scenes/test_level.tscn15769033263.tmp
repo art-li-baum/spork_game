@@ -1,0 +1,119 @@
+[gd_scene load_steps=15 format=3 uid="uid://bb8d5rqlhrtpj"]
+
+[ext_resource type="Texture2D" uid="uid://bvxv6d8c3ty3s" path="res://ArtAssets/sporks/ascii_spork/ascii-art1.png" id="1_akkqd"]
+[ext_resource type="Theme" uid="uid://cbjrsujbntlxe" path="res://Resources/ui_theme.tres" id="1_iti4p"]
+[ext_resource type="Texture2D" uid="uid://dxe0sov5k3i8u" path="res://ArtAssets/sporks/ascii_spork/ascii-art2.png" id="2_8v7by"]
+[ext_resource type="PackedScene" uid="uid://butc3tcibnwvv" path="res://Scenes/spork_rotation/spork_model.tscn" id="2_dtjkg"]
+[ext_resource type="Script" uid="uid://bn12bodnlk1aw" path="res://Scenes/spork_rotation/rotate_button.gd" id="2_eglq2"]
+[ext_resource type="Script" uid="uid://dea8jq3sut8qu" path="res://Scenes/spork_rotation/total_rotations_label.gd" id="2_rsyfn"]
+[ext_resource type="Texture2D" uid="uid://bm3gffkf1bcfg" path="res://ArtAssets/sporks/ascii_spork/ascii-art3.png" id="3_1rqgg"]
+[ext_resource type="Texture2D" uid="uid://07f2dx11t0qh" path="res://ArtAssets/sporks/ascii_spork/ascii-art4.png" id="4_mwmob"]
+[ext_resource type="Texture2D" uid="uid://dijdpejefxisi" path="res://ArtAssets/sporks/ascii_spork/ascii-art5.png" id="5_so54a"]
+[ext_resource type="Texture2D" uid="uid://bn3gn5fg0d5dc" path="res://ArtAssets/sporks/ascii_spork/ascii-art6.png" id="6_sw8nc"]
+[ext_resource type="Script" uid="uid://cmf7w8vndnrj5" path="res://Scenes/spork_rotation/ascii_spork_rotator.gd" id="7_8v7by"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x6ft1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_akkqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8v7by")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1rqgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mwmob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_so54a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sw8nc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Environment" id="Environment_dtjkg"]
+background_mode = 1
+background_color = Color(0.952941, 0.956863, 0.964706, 1)
+
+[sub_resource type="Environment" id="Environment_eglq2"]
+background_mode = 1
+background_color = Color(0.907942, 0.907942, 0.907942, 1)
+
+[node name="test_level" type="Node3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1281.0
+offset_bottom = 719.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ACII_Spork" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control/ACII_Spork"]
+position = Vector2(32, 32)
+sprite_frames = SubResource("SpriteFrames_x6ft1")
+frame_progress = 0.683596
+script = ExtResource("7_8v7by")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 21.0
+offset_right = 434.0
+offset_bottom = 144.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TotalRotations" type="RichTextLabel" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 23.69)
+layout_mode = 2
+theme = ExtResource("1_iti4p")
+text = "sportk rotations"
+script = ExtResource("2_rsyfn")
+
+[node name="RotateButton" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Rotate Spork
+"
+script = ExtResource("2_eglq2")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+environment = SubResource("Environment_dtjkg")
+
+[node name="spork_model" parent="." instance=ExtResource("2_dtjkg")]
+unique_name_in_owner = true
+transform = Transform3D(0.976672, 0.441281, 0, -0.214735, 2.00706, 0, 0, 0, 1, 0, 0, -5.37355)
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_eglq2")

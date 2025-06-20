@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdd6nit408p80"]
+
+[ext_resource type="Theme" uid="uid://cbjrsujbntlxe" path="res://Resources/ascii_ui_theme.tres" id="1_u5uhc"]
+[ext_resource type="Script" uid="uid://dea8jq3sut8qu" path="res://Scenes/spork_rotation/total_rotations_label.gd" id="2_o6y36"]
+[ext_resource type="Script" uid="uid://bn12bodnlk1aw" path="res://Scenes/spork_rotation/rotate_button.gd" id="3_shopd"]
+[ext_resource type="PackedScene" uid="uid://i5r5b0yutkuw" path="res://Scenes/popups/pop_quiz_panel.tscn" id="4_3h87t"]
+[ext_resource type="Script" uid="uid://d14uixnbj10t" path="res://Scenes/upgrades/telekenisis.gd" id="4_o6y36"]
+[ext_resource type="Script" uid="uid://df7lpbkkgiex3" path="res://Scenes/upgrades/rpm_monitor.gd" id="5_shopd"]
+[ext_resource type="Script" uid="uid://dxsanw8gjtk0i" path="res://Scenes/upgrades/click_upgrade.gd" id="6_3h87t"]
+[ext_resource type="Script" uid="uid://bb6xoip60204g" path="res://Scenes/upgrades/sportk_click.gd" id="7_rfa7q"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1281.0
+offset_bottom = 719.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_u5uhc")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 21.0
+offset_right = 434.0
+offset_bottom = 144.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+custom_minimum_size = Vector2(100, 176.5)
+layout_mode = 2
+
+[node name="TotalRotations" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 48.215)
+layout_mode = 2
+theme = ExtResource("1_u5uhc")
+text = "spork rotations"
+scroll_active = false
+script = ExtResource("2_o6y36")
+
+[node name="RotateButton" type="Button" parent="Control/MarginContainer/VBoxContainer/TotalRotations"]
+layout_mode = 2
+offset_top = 27.0
+offset_right = 399.0
+offset_bottom = 48.0
+text = "Rotate Spork
+"
+script = ExtResource("3_shopd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Upgrade" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 23.67)
+layout_mode = 2
+theme = ExtResource("1_u5uhc")
+text = "Spork Stats"
+
+[node name="Unlock Mental Powers" type="Button" parent="Control/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Unlock Telekinesis (25 rotations)
+"
+script = ExtResource("4_o6y36")
+
+[node name="RPM" type="Label" parent="Control/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "RPM : "
+script = ExtResource("5_shopd")
+
+[node name="Unlock Click" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Stronger Clicks (50)
+"
+script = ExtResource("6_3h87t")
+
+[node name="Unlock Shop" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+disabled = true
+text = "Run Setup Wizard (100)
+"
+
+[node name="SporkClick" type="Button" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -180.5
+offset_right = 188.0
+offset_bottom = 180.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_rfa7q")
+
+[node name="PopQuizPanel" parent="Control" instance=ExtResource("4_3h87t")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -109.0
+offset_right = 131.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/VBoxContainer/Unlock Mental Powers" to="Control/MarginContainer/VBoxContainer/VBoxContainer/Unlock Mental Powers" method="_on_button_pressed"]

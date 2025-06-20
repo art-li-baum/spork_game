@@ -1,0 +1,265 @@
+[gd_scene load_steps=21 format=3 uid="uid://bydwnaed1mh16"]
+
+[ext_resource type="Texture2D" uid="uid://d2gnj8elaratb" path="res://ArtAssets/Dopamine Shop/SHOP.png" id="1_djxt1"]
+[ext_resource type="Texture2D" uid="uid://cra1dlhris5dp" path="res://ArtAssets/Dopamine Shop/SHOP4.png" id="1_i7m0h"]
+[ext_resource type="Texture2D" uid="uid://b7fbkyj0ekfbr" path="res://ArtAssets/Dopamine Shop/SHOP3.png" id="1_q27wc"]
+[ext_resource type="Script" uid="uid://dkxtuuh0bkj8a" path="res://Scenes/shop/store_inventory.gd" id="2_77puw"]
+[ext_resource type="Texture2D" uid="uid://77jjwh8hp8ue" path="res://ArtAssets/Dopamine Shop/SHOP2_.png" id="3_qgnqj"]
+[ext_resource type="Script" uid="uid://cnc6uag43eeg7" path="res://Scenes/shop/button1.gd" id="6_pc6ds"]
+[ext_resource type="Script" uid="uid://c5ul2bpl6rhdp" path="res://Scenes/shop/button_2.gd" id="7_77puw"]
+[ext_resource type="Script" uid="uid://b6xmlfnxahhms" path="res://Scenes/shop/button_3.gd" id="8_8eo32"]
+[ext_resource type="Texture2D" uid="uid://k7ngf2r0idkf" path="res://ArtAssets/buttons/CuteButton.png" id="9_pc6ds"]
+[ext_resource type="Texture2D" uid="uid://bu1epq4mab6sy" path="res://ArtAssets/buttons/EdgyButton.png" id="10_6st3x"]
+[ext_resource type="Script" uid="uid://bebcoal73na0y" path="res://Scenes/shop/cute_button.gd" id="10_qgnqj"]
+[ext_resource type="Script" uid="uid://dwm35vvuifs5q" path="res://Scenes/shop/fun_button.gd" id="11_pc6ds"]
+[ext_resource type="Texture2D" uid="uid://yo3lltw54q8x" path="res://ArtAssets/buttons/FunButton.png" id="11_qgnqj"]
+[ext_resource type="Theme" uid="uid://cbjrsujbntlxe" path="res://Resources/ascii_ui_theme.tres" id="12_6st3x"]
+[ext_resource type="Script" uid="uid://4yfadym6dsaq" path="res://Scenes/shop/spooky_button.gd" id="12_qgnqj"]
+[ext_resource type="Texture2D" uid="uid://do0p4xqwlcp0c" path="res://ArtAssets/buttons/ButtonAero.png" id="13_0ia6e"]
+[ext_resource type="Script" uid="uid://pd1ok1nbva05" path="res://Scenes/shop/spork_button.gd" id="15_533ar"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vo4q6"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 0.862745)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q27wc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7m0h"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Store" type="TextureRect" node_paths=PackedStringArray("basic", "level2", "level3", "finale", "desc_1", "desc_2", "desc_3", "pricing", "cute_butt", "spook_butt", "fun_butt")]
+offset_left = -2.0
+offset_top = 37.0
+offset_right = 570.0
+offset_bottom = 384.0
+texture = ExtResource("1_djxt1")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("2_77puw")
+basic = NodePath("basic shop")
+level2 = NodePath("level2shop")
+level3 = NodePath("level3shop")
+finale = NodePath("FINALE")
+desc_1 = NodePath("shop descriptors/Label1")
+desc_2 = NodePath("shop descriptors/Label2")
+desc_3 = NodePath("shop descriptors/Label3")
+pricing = NodePath("pricing")
+cute_butt = NodePath("level2shop/CuteButton")
+spook_butt = NodePath("level2shop/SpookyButton")
+fun_butt = NodePath("level2shop/FunButton")
+level2background = ExtResource("3_qgnqj")
+level3background = ExtResource("1_q27wc")
+finalebackground = ExtResource("1_i7m0h")
+
+[node name="basic shop" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 289.0
+offset_right = 439.0
+offset_bottom = 326.0
+theme_override_constants/separation = 52
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Button" type="Button" parent="basic shop"]
+custom_minimum_size = Vector2(81.36, 37.61)
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vo4q6")
+text = "Clock"
+script = ExtResource("6_pc6ds")
+current_cost = 50
+
+[node name="Button2" type="Button" parent="basic shop"]
+custom_minimum_size = Vector2(81.36, 37.61)
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vo4q6")
+text = "Page Title"
+script = ExtResource("7_77puw")
+current_cost = 100
+
+[node name="Button3" type="Button" parent="basic shop"]
+custom_minimum_size = Vector2(81.36, 37.61)
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vo4q6")
+text = "? ? ?"
+script = ExtResource("8_8eo32")
+current_cost = 1000
+
+[node name="level2shop" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 97.0
+offset_top = 263.0
+offset_right = 517.0
+offset_bottom = 331.0
+mouse_filter = 2
+theme_override_constants/separation = 35
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="CuteButton" type="Button" parent="level2shop" node_paths=PackedStringArray("label")]
+custom_minimum_size = Vector2(100.7, 68.84)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q27wc")
+icon = ExtResource("9_pc6ds")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("10_qgnqj")
+label = NodePath("../../shop descriptors/Label1")
+
+[node name="SpookyButton" type="Button" parent="level2shop" node_paths=PackedStringArray("label")]
+custom_minimum_size = Vector2(100.7, 68.84)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q27wc")
+icon = ExtResource("10_6st3x")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("12_qgnqj")
+label = NodePath("../../shop descriptors/Label2")
+
+[node name="FunButton" type="Button" parent="level2shop" node_paths=PackedStringArray("label")]
+custom_minimum_size = Vector2(100.7, 68.84)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q27wc")
+icon = ExtResource("11_qgnqj")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("11_pc6ds")
+label = NodePath("../../shop descriptors/Label3")
+
+[node name="level3shop" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 118.0
+offset_top = 257.0
+offset_right = 487.0
+offset_bottom = 307.0
+mouse_filter = 2
+theme_override_constants/separation = 3
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Button" type="Button" parent="level3shop"]
+custom_minimum_size = Vector2(121.19, 50.585)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23212, 0.23212, 0.23212, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vo4q6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_i7m0h")
+text = "SMILE"
+icon = ExtResource("13_0ia6e")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("15_533ar")
+spork_type = 6
+current_cost = 200000
+
+[node name="Button2" type="Button" parent="level3shop"]
+custom_minimum_size = Vector2(121.19, 50.585)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23212, 0.23212, 0.23212, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vo4q6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_i7m0h")
+text = "SOFT"
+icon = ExtResource("13_0ia6e")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("15_533ar")
+spork_type = 7
+current_cost = 400000
+
+[node name="Button3" type="Button" parent="level3shop"]
+custom_minimum_size = Vector2(121.19, 50.585)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23212, 0.23212, 0.23212, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vo4q6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_i7m0h")
+text = "SPARKLE"
+icon = ExtResource("13_0ia6e")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("15_533ar")
+spork_type = 8
+current_cost = 600000
+
+[node name="FINALE" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 118.0
+offset_top = 257.0
+offset_right = 487.0
+offset_bottom = 307.0
+mouse_filter = 2
+theme_override_constants/separation = 3
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Button" type="Button" parent="FINALE"]
+modulate = Color(0.998763, 0.103505, 1, 1)
+custom_minimum_size = Vector2(121.19, 50.585)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vo4q6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_i7m0h")
+text = "ASCEND"
+icon = ExtResource("13_0ia6e")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("15_533ar")
+spork_type = 9
+current_cost = 740280
+
+[node name="shop descriptors" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 343.0
+offset_right = 435.0
+offset_bottom = 404.0
+theme_override_constants/separation = 42
+metadata/_edit_group_ = true
+
+[node name="Label1" type="Label" parent="shop descriptors"]
+custom_minimum_size = Vector2(89.38, 35.235)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "This is some test text that is purpously very long"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="shop descriptors"]
+custom_minimum_size = Vector2(89.38, 35.235)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "This is some test text that is purpously very long"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="shop descriptors"]
+custom_minimum_size = Vector2(89.38, 35.235)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "This is some test text that is purpously very long"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="pricing" type="Label" parent="."]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 201.0
+offset_right = 276.0
+offset_bottom = 224.0
+theme = ExtResource("12_6st3x")
+text = "10000"
+
+[connection signal="pressed" from="basic shop/Button" to="basic shop/Button" method="on_click"]
+[connection signal="pressed" from="basic shop/Button2" to="basic shop/Button2" method="on_click"]
+[connection signal="pressed" from="basic shop/Button3" to="basic shop/Button3" method="on_click"]
+[connection signal="pressed" from="level2shop/CuteButton" to="level2shop/CuteButton" method="on_click"]
+[connection signal="pressed" from="level2shop/SpookyButton" to="level2shop/SpookyButton" method="on_click"]
+[connection signal="pressed" from="level2shop/FunButton" to="level2shop/FunButton" method="on_click"]
+[connection signal="pressed" from="level3shop/Button" to="level3shop/Button" method="on_click"]
+[connection signal="pressed" from="level3shop/Button2" to="level3shop/Button2" method="on_click"]
+[connection signal="pressed" from="level3shop/Button3" to="level3shop/Button3" method="on_click"]
+[connection signal="pressed" from="FINALE/Button" to="FINALE/Button" method="on_click"]

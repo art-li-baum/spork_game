@@ -13,12 +13,19 @@ config_version=5
 config/name="Spork_Project"
 run/main_scene="uid://bb8d5rqlhrtpj"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+run/max_fps=60
+boot_splash/fullsize=false
+boot_splash/image="uid://dw0cvhnvoeeej"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=2
 
 [autoload]
 
 RotationManager="*res://Scenes/globals/rotation_manager.gd"
 ActionList="*res://Scenes/globals/action_list/action_list.gd"
+ProgressManager="*res://Scenes/globals/progress_manager.gd"
+DopamineManager="*res://Scenes/globals/dopamine_manager.gd"
+TimeManager="*res://Scenes/globals/time_manager.gd"
 
 [debug_draw_3d]
 

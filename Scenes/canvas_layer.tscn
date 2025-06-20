@@ -1,0 +1,707 @@
+[gd_scene load_steps=53 format=3 uid="uid://bdd6nit408p80"]
+
+[ext_resource type="Script" uid="uid://2ea7joxxdup8" path="res://Scenes/canvas_layer.gd" id="1_fxbga"]
+[ext_resource type="Theme" uid="uid://cbjrsujbntlxe" path="res://Resources/ascii_ui_theme.tres" id="1_u5uhc"]
+[ext_resource type="Script" uid="uid://dea8jq3sut8qu" path="res://Scenes/spork_rotation/total_rotations_label.gd" id="2_o6y36"]
+[ext_resource type="Script" uid="uid://ctp2dnkw8aere" path="res://Scenes/page_title.gd" id="3_at3ct"]
+[ext_resource type="Script" uid="uid://bn12bodnlk1aw" path="res://Scenes/spork_rotation/rotate_button.gd" id="3_shopd"]
+[ext_resource type="PackedScene" uid="uid://i5r5b0yutkuw" path="res://Scenes/popups/pop_quiz_panel.tscn" id="4_3h87t"]
+[ext_resource type="Texture2D" uid="uid://df0wwchrvijo4" path="res://ArtAssets/titles/Upgrade1_Title_Cute.png" id="4_o0r35"]
+[ext_resource type="Script" uid="uid://d14uixnbj10t" path="res://Scenes/upgrades/telekenisis.gd" id="4_o6y36"]
+[ext_resource type="Texture2D" uid="uid://3hpmwmfteuw6" path="res://ArtAssets/titles/Upgrade2_Subtitle_Cute.png" id="5_oe2lt"]
+[ext_resource type="Script" uid="uid://df7lpbkkgiex3" path="res://Scenes/upgrades/rpm_monitor.gd" id="5_shopd"]
+[ext_resource type="Script" uid="uid://dxsanw8gjtk0i" path="res://Scenes/upgrades/click_upgrade.gd" id="6_3h87t"]
+[ext_resource type="Texture2D" uid="uid://c1i2kj2pbfvou" path="res://ArtAssets/titles/Upgrade1_Title_Fun.png" id="6_nrfe3"]
+[ext_resource type="Script" uid="uid://bb6xoip60204g" path="res://Scenes/upgrades/sportk_click.gd" id="7_rfa7q"]
+[ext_resource type="Texture2D" uid="uid://coracw5b1dbrp" path="res://ArtAssets/titles/Upgrade2_Subtitle_Fun.png" id="7_s8j3d"]
+[ext_resource type="Script" uid="uid://yseumlyh8tan" path="res://Scenes/upgrades/click_strength_monitor.gd" id="7_ykgyh"]
+[ext_resource type="Texture2D" uid="uid://d127o88d7n5q1" path="res://ArtAssets/titles/Upgrade1_Title_Edgy.png" id="8_7l8sf"]
+[ext_resource type="Texture2D" uid="uid://8sj66pa7wivk" path="res://ArtAssets/titles/Upgrade2_Subtitle_Edgy.png" id="9_8o443"]
+[ext_resource type="Script" uid="uid://r8i22hqpy2of" path="res://Scenes/upgrades/dope_monitor.gd" id="9_r21k2"]
+[ext_resource type="Script" uid="uid://cmx3ag3u601ps" path="res://Scenes/upgrades/shop_teir.gd" id="9_vpnwd"]
+[ext_resource type="Texture2D" uid="uid://qpklcvjv3tkl" path="res://ArtAssets/icons/Upgrade3_Cute_0000_Layer-1-copy-2.png" id="10_g76wj"]
+[ext_resource type="Script" uid="uid://21lf47tqp7cp" path="res://Scenes/dpr_monitor.gd" id="11_lkw6s"]
+[ext_resource type="PackedScene" uid="uid://brmbq282lsmiq" path="res://Scenes/shop/shop_panel.tscn" id="11_okafh"]
+[ext_resource type="Texture2D" uid="uid://bi367ex15ig27" path="res://ArtAssets/icons/Upgrade3_Cute_0001_Layer-1-copy.png" id="11_po6bk"]
+[ext_resource type="Texture2D" uid="uid://bojwm7kgmx481" path="res://ArtAssets/icons/Upgrade3_Cute_0002_Layer-1.png" id="12_426l6"]
+[ext_resource type="Script" uid="uid://bq1ewlgvkn4gp" path="res://Scenes/gifs/hamster_wave.gd" id="12_b5k1c"]
+[ext_resource type="Script" uid="uid://dg1rd6hovhywb" path="res://Scenes/play_onready.gd" id="13_po6bk"]
+[ext_resource type="FontFile" uid="uid://b4g3kv2a2ljxr" path="res://ArtAssets/fonts/Times New Roman/times new roman bold.ttf" id="13_r21k2"]
+[ext_resource type="Texture2D" uid="uid://b673hmbanfhhw" path="res://ArtAssets/icons/Upgrade3_Edgy_0000_Layer-1-copy-2.png" id="13_vhdbw"]
+[ext_resource type="PackedScene" uid="uid://d2g0dr6jwq7m" path="res://Scenes/gifs/hampster.tscn" id="13_vpnwd"]
+[ext_resource type="Texture2D" uid="uid://1knx3mhp1aio" path="res://ArtAssets/icons/Upgrade3_Edgy_0001_Layer-1-copy.png" id="14_y1kwv"]
+[ext_resource type="Texture2D" uid="uid://dvj0c6cletjuq" path="res://ArtAssets/icons/Upgrade3_Edgy_0002_Layer-1.png" id="15_b41jp"]
+[ext_resource type="Script" uid="uid://brbl7w2nstylq" path="res://Scenes/clock.gd" id="15_q8ad8"]
+[ext_resource type="Texture2D" uid="uid://uy5urycqbxy5" path="res://ArtAssets/icons/Upgrade3_Fun_0000_Layer-1-copy.png" id="16_2fnm7"]
+[ext_resource type="Texture2D" uid="uid://bvfcy1sn8e424" path="res://ArtAssets/icons/Upgrade3_Fun_0001_Layer-1-copy-2.png" id="17_jsbht"]
+[ext_resource type="Texture2D" uid="uid://c7itika2a7g5b" path="res://ArtAssets/icons/Upgrade3_Fun_0002_Layer-1.png" id="18_i2b7f"]
+[ext_resource type="Script" uid="uid://dgaiimsve6pbe" path="res://Scenes/popups/popup_manager.gd" id="34_426l6"]
+[ext_resource type="PackedScene" uid="uid://b7wt53rlgrcbn" path="res://Scenes/popups/sporky_popup.tscn" id="36_vhdbw"]
+[ext_resource type="Texture2D" uid="uid://4cfloadvfl3e" path="res://ArtAssets/popup/PopupAD0.png" id="37_b41jp"]
+[ext_resource type="Script" uid="uid://cdytd3j1nd071" path="res://Scenes/popups/base_popup.gd" id="38_2fnm7"]
+[ext_resource type="Texture2D" uid="uid://26vc3oaka0bs" path="res://ArtAssets/popup/PopupAD2.png" id="39_5xgam"]
+[ext_resource type="Texture2D" uid="uid://c4f77i6jf6elg" path="res://ArtAssets/popup/PopupAD3.png" id="40_4wfqy"]
+[ext_resource type="Texture2D" uid="uid://cyfjcejq0ywym" path="res://ArtAssets/popup/image.png" id="41_4wfqy"]
+[ext_resource type="Texture2D" uid="uid://b80jhnrwxsiio" path="res://ArtAssets/popup/PopupAD.png" id="41_b61l0"]
+[ext_resource type="Texture2D" uid="uid://c8yiloxw7h2up" path="res://ArtAssets/popup/waifu.png" id="42_fxbga"]
+[ext_resource type="FontFile" uid="uid://erdgllynwqkw" path="res://examples_dd3d/Roboto-Bold.ttf" id="43_mndwy"]
+[ext_resource type="Script" uid="uid://dtq1mxpvt8sv5" path="res://Scenes/error.gd" id="45_b61l0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g76wj"]
+bg_color = Color(1, 1, 1, 0.47451)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j73xf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_g76wj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_po6bk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_426l6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5xgam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_vhdbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_y1kwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_b41jp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wfqy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_2fnm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jsbht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_i2b7f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsbht"]
+bg_color = Color(0.6, 0.6, 0.6, 0.00784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxbga"]
+bg_color = Color(0, 0, 1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_u5uhc")
+script = ExtResource("1_fxbga")
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 2
+offset_left = 77.0
+offset_top = 137.0
+offset_right = 476.0
+offset_bottom = 423.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g76wj")
+
+[node name="PageTitle" type="RichTextLabel" parent="Control" node_paths=PackedStringArray("cute", "fun", "spook", "sub", "c", "s", "f")]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_top = -30.0
+offset_right = 3.0
+offset_bottom = 147.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("13_r21k2")
+theme_override_font_sizes/normal_font_size = 77
+text = "SPORK PAGE"
+horizontal_alignment = 1
+vertical_alignment = 1
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+script = ExtResource("3_at3ct")
+cute = NodePath("CuteTitle")
+fun = NodePath("FunTitle")
+spook = NodePath("SpookyTitle")
+sub = NodePath("RichTextLabel")
+c = NodePath("icons/cute")
+s = NodePath("icons/spook")
+f = NodePath("icons/fn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/PageTitle"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -66.0
+offset_right = 3.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 32
+text = "Welcome to my Interwebzz corner for Spork appreciation!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CuteTitle" type="TextureRect" parent="Control/PageTitle"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -244.0
+offset_top = 28.0
+offset_right = 246.0
+offset_bottom = 134.0
+grow_horizontal = 2
+texture = ExtResource("4_o0r35")
+expand_mode = 1
+
+[node name="subtitle" type="TextureRect" parent="Control/PageTitle/CuteTitle"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -421.0
+offset_top = -1.0
+offset_right = 417.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_oe2lt")
+expand_mode = 1
+
+[node name="FunTitle" type="TextureRect" parent="Control/PageTitle"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -278.0
+offset_top = 28.0
+offset_right = 267.0
+offset_bottom = 134.0
+grow_horizontal = 2
+texture = ExtResource("6_nrfe3")
+expand_mode = 1
+
+[node name="subtitle" type="TextureRect" parent="Control/PageTitle/FunTitle"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -421.0
+offset_top = -1.0
+offset_right = 417.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_s8j3d")
+expand_mode = 1
+
+[node name="SpookyTitle" type="TextureRect" parent="Control/PageTitle"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -278.0
+offset_top = 28.0
+offset_right = 267.0
+offset_bottom = 134.0
+grow_horizontal = 2
+texture = ExtResource("8_7l8sf")
+expand_mode = 1
+
+[node name="subtitle" type="TextureRect" parent="Control/PageTitle/SpookyTitle"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -421.0
+offset_top = -1.0
+offset_right = 417.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_8o443")
+expand_mode = 1
+
+[node name="icons" type="Control" parent="Control/PageTitle"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cute" type="AnimatedSprite2D" parent="Control/PageTitle/icons"]
+visible = false
+position = Vector2(500, 43.5)
+scale = Vector2(0.18, 0.193188)
+sprite_frames = SubResource("SpriteFrames_j73xf")
+frame_progress = 0.405059
+script = ExtResource("13_po6bk")
+
+[node name="cute2" type="AnimatedSprite2D" parent="Control/PageTitle/icons/cute"]
+position = Vector2(-5255.56, 41.4105)
+scale = Vector2(1.08024, 0.949531)
+sprite_frames = SubResource("SpriteFrames_j73xf")
+frame_progress = 0.916452
+flip_h = true
+script = ExtResource("13_po6bk")
+
+[node name="spook" type="AnimatedSprite2D" parent="Control/PageTitle/icons"]
+visible = false
+position = Vector2(500, 43.5)
+scale = Vector2(0.18, 0.193188)
+sprite_frames = SubResource("SpriteFrames_5xgam")
+frame_progress = 0.238208
+script = ExtResource("13_po6bk")
+
+[node name="cute2" type="AnimatedSprite2D" parent="Control/PageTitle/icons/spook"]
+position = Vector2(-5255.56, 41.4105)
+scale = Vector2(1.08024, 0.949531)
+sprite_frames = SubResource("SpriteFrames_5xgam")
+frame_progress = 0.650952
+flip_h = true
+script = ExtResource("13_po6bk")
+
+[node name="fn" type="AnimatedSprite2D" parent="Control/PageTitle/icons"]
+visible = false
+position = Vector2(500, 43.5)
+scale = Vector2(0.18, 0.193188)
+sprite_frames = SubResource("SpriteFrames_4wfqy")
+frame_progress = 0.981279
+script = ExtResource("13_po6bk")
+
+[node name="cute2" type="AnimatedSprite2D" parent="Control/PageTitle/icons/fn"]
+position = Vector2(-5255.56, 41.4105)
+scale = Vector2(1.08024, 0.949531)
+sprite_frames = SubResource("SpriteFrames_4wfqy")
+flip_h = true
+script = ExtResource("13_po6bk")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 137.0
+offset_right = 476.0
+offset_bottom = 313.5
+
+[node name="rotation collumn" type="VBoxContainer" parent="Control/MarginContainer"]
+custom_minimum_size = Vector2(100, 176.5)
+layout_mode = 2
+theme_override_constants/separation = 29
+
+[node name="TotalRotations" type="RichTextLabel" parent="Control/MarginContainer/rotation collumn"]
+custom_minimum_size = Vector2(100, 48.215)
+layout_mode = 2
+theme = ExtResource("1_u5uhc")
+text = "spork rotations"
+scroll_active = false
+script = ExtResource("2_o6y36")
+
+[node name="RotateButton" type="Button" parent="Control/MarginContainer/rotation collumn/TotalRotations"]
+layout_mode = 2
+offset_top = 27.0
+offset_right = 399.0
+offset_bottom = 48.0
+text = "Rotate Spork
+"
+script = ExtResource("3_shopd")
+
+[node name="RPS Column" type="VBoxContainer" parent="Control/MarginContainer/rotation collumn"]
+layout_mode = 2
+
+[node name="Upgrade" type="RichTextLabel" parent="Control/MarginContainer/rotation collumn/RPS Column"]
+custom_minimum_size = Vector2(100, 23.67)
+layout_mode = 2
+theme = ExtResource("1_u5uhc")
+text = "Spork Stats"
+
+[node name="RPM" type="Label" parent="Control/MarginContainer/rotation collumn/RPS Column"]
+layout_mode = 2
+text = "RPS: "
+script = ExtResource("5_shopd")
+
+[node name="RPS Upgrade Button" type="Button" parent="Control/MarginContainer/rotation collumn/RPS Column"]
+layout_mode = 2
+disabled = true
+text = "Unlock Telekinesis (25 rotations)
+"
+script = ExtResource("4_o6y36")
+
+[node name="Click Strength" type="VBoxContainer" parent="Control/MarginContainer/rotation collumn/RPS Column"]
+layout_mode = 2
+
+[node name="click strenght" type="Label" parent="Control/MarginContainer/rotation collumn/RPS Column/Click Strength"]
+layout_mode = 2
+text = "Click Strength:"
+uppercase = true
+script = ExtResource("7_ykgyh")
+
+[node name="Unlock Click" type="Button" parent="Control/MarginContainer/rotation collumn/RPS Column/Click Strength"]
+layout_mode = 2
+disabled = true
+text = "Stronger Clicks (50)
+"
+script = ExtResource("6_3h87t")
+
+[node name="dopamine" type="VBoxContainer" parent="Control/MarginContainer/rotation collumn"]
+layout_mode = 2
+
+[node name="dopamine count" type="Label" parent="Control/MarginContainer/rotation collumn/dopamine"]
+layout_mode = 2
+text = "dopamine "
+script = ExtResource("9_r21k2")
+
+[node name="dpr" type="Label" parent="Control/MarginContainer/rotation collumn/dopamine"]
+layout_mode = 2
+text = "dpr "
+script = ExtResource("11_lkw6s")
+
+[node name="Unlock Shop" type="Button" parent="Control/MarginContainer/rotation collumn/dopamine"]
+layout_mode = 2
+disabled = true
+text = "Run Setup Wizard (100)
+"
+script = ExtResource("9_vpnwd")
+
+[node name="SporkClick" type="Button" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -180.5
+offset_right = 188.0
+offset_bottom = 180.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_rfa7q")
+
+[node name="ShopPanel" parent="Control" instance=ExtResource("11_okafh")]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 160.0
+offset_right = 1301.0
+offset_bottom = 619.0
+
+[node name="Hamster wave" type="Control" parent="Control"]
+anchors_preset = 0
+offset_left = 973.0
+offset_top = 646.0
+offset_right = 1013.0
+offset_bottom = 686.0
+script = ExtResource("12_b5k1c")
+
+[node name="Hampster" parent="Control/Hamster wave" instance=ExtResource("13_vpnwd")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -32.0
+offset_right = -3.0
+offset_bottom = -32.0
+
+[node name="Panel2" type="Panel" parent="Control"]
+layout_mode = 1
+offset_left = 30.0
+offset_top = 15.0
+offset_right = 225.0
+offset_bottom = 39.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g76wj")
+metadata/_edit_group_ = true
+
+[node name="Clock" type="RichTextLabel" parent="Control/Panel2"]
+layout_mode = 0
+offset_right = 216.0
+offset_bottom = 24.0
+text = "00y:00mo:00h:00m:00s"
+script = ExtResource("15_q8ad8")
+
+[node name="PopupManager" type="Control" parent="Control" node_paths=PackedStringArray("popups", "message0", "message1")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("34_426l6")
+popups = [NodePath("popup"), NodePath("popup6"), NodePath("popup4"), NodePath("popup5")]
+message0 = NodePath("popup2")
+message1 = NodePath("popup3")
+metadata/_edit_lock_ = true
+
+[node name="PopQuizPanel" parent="Control/PopupManager" instance=ExtResource("4_3h87t")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -109.0
+offset_right = 131.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="sporky_popup" parent="Control/PopupManager" instance=ExtResource("36_vhdbw")]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 311.0
+offset_right = 1282.0
+offset_bottom = 565.0
+
+[node name="popup" type="TextureRect" parent="Control/PopupManager"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 792.0
+offset_right = 524.0
+offset_bottom = 1139.0
+texture = ExtResource("37_b41jp")
+expand_mode = 1
+script = ExtResource("38_2fnm7")
+
+[node name="Button" type="Button" parent="Control/PopupManager/popup"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 253.0
+offset_right = 342.0
+offset_bottom = 309.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_jsbht")
+
+[node name="popup2" type="TextureRect" parent="Control/PopupManager"]
+layout_mode = 0
+offset_left = 662.0
+offset_top = 733.0
+offset_right = 1211.0
+offset_bottom = 1080.0
+texture = ExtResource("39_5xgam")
+expand_mode = 1
+script = ExtResource("38_2fnm7")
+
+[node name="Button" type="Button" parent="Control/PopupManager/popup2"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 257.0
+offset_right = 389.0
+offset_bottom = 313.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_jsbht")
+
+[node name="popup3" type="TextureRect" parent="Control/PopupManager"]
+layout_mode = 0
+offset_left = 1255.0
+offset_top = 893.0
+offset_right = 1804.0
+offset_bottom = 1240.0
+texture = ExtResource("40_4wfqy")
+expand_mode = 1
+script = ExtResource("38_2fnm7")
+
+[node name="Button" type="Button" parent="Control/PopupManager/popup3"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 257.0
+offset_right = 389.0
+offset_bottom = 313.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_jsbht")
+
+[node name="popup6" type="TextureRect" parent="Control/PopupManager"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 257.0
+offset_right = 519.0
+offset_bottom = 676.0
+texture = ExtResource("41_4wfqy")
+expand_mode = 1
+script = ExtResource("38_2fnm7")
+
+[node name="Button" type="Button" parent="Control/PopupManager/popup6"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 351.0
+offset_right = 309.0
+offset_bottom = 407.0
+text = "OKAY"
+
+[node name="Label" type="Label" parent="Control/PopupManager/popup6"]
+layout_mode = 0
+offset_right = 394.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0, 0, 0.992157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "PLAY GAMES
+ NOW!!!!"
+horizontal_alignment = 1
+
+[node name="popup4" type="TextureRect" parent="Control/PopupManager"]
+layout_mode = 0
+offset_left = 1499.0
+offset_top = 538.0
+offset_right = 2048.0
+offset_bottom = 885.0
+texture = ExtResource("41_b61l0")
+expand_mode = 1
+script = ExtResource("38_2fnm7")
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="Control/PopupManager/popup4"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 288.0
+offset_right = 348.0
+offset_bottom = 331.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_jsbht")
+
+[node name="popup5" type="TextureRect" parent="Control/PopupManager"]
+layout_mode = 0
+offset_left = 1406.0
+offset_top = 130.0
+offset_right = 1786.0
+offset_bottom = 496.0
+texture = ExtResource("42_fxbga")
+expand_mode = 1
+script = ExtResource("38_2fnm7")
+
+[node name="Button" type="Button" parent="Control/PopupManager/popup5"]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 188.0
+offset_right = 357.0
+offset_bottom = 231.0
+text = "Okay"
+
+[node name="Label" type="Label" parent="Control/PopupManager/popup5"]
+layout_mode = 0
+offset_right = 366.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.933333, 0, 0, 1)
+theme_override_fonts/font = ExtResource("43_mndwy")
+theme_override_font_sizes/font_size = 36
+text = "Hot WAIFU 
+"
+
+[node name="Label2" type="Label" parent="Control/PopupManager/popup5"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 261.0
+offset_right = 383.0
+offset_bottom = 370.0
+theme_override_colors/font_color = Color(0.933333, 0, 0, 1)
+theme_override_fonts/font = ExtResource("43_mndwy")
+theme_override_font_sizes/font_size = 45
+text = "
+In YOUR AREA"
+
+[node name="Finale" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="ERROR" type="Panel" parent="Control" node_paths=PackedStringArray("refreshtext")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fxbga")
+script = ExtResource("45_b61l0")
+refreshtext = NodePath("RichTextLabel2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/ERROR"]
+layout_mode = 0
+offset_right = 1270.0
+offset_bottom = 708.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "FLAGRANT ROTATION ERROR
+UNIVERSE OVER
+SPORK VIRUS = VERY YES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/ERROR"]
+visible = false
+layout_mode = 0
+offset_right = 1270.0
+offset_bottom = 708.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "The Only Way Out is to Refresh
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[connection signal="pressed" from="Control/MarginContainer/rotation collumn/RPS Column/RPS Upgrade Button" to="Control/MarginContainer/rotation collumn/RPS Column/RPS Upgrade Button" method="_on_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/rotation collumn/dopamine/Unlock Shop" to="Control/MarginContainer/rotation collumn/dopamine/Unlock Shop" method="upgrade"]
+[connection signal="pressed" from="Control/PopupManager/popup/Button" to="Control/PopupManager/popup" method="dismiss"]
+[connection signal="pressed" from="Control/PopupManager/popup2/Button" to="Control/PopupManager/popup2" method="dismiss"]
+[connection signal="pressed" from="Control/PopupManager/popup3/Button" to="Control/PopupManager/popup3" method="dismiss"]
+[connection signal="pressed" from="Control/PopupManager/popup6/Button" to="Control/PopupManager/popup6" method="dismiss"]
+[connection signal="pressed" from="Control/PopupManager/popup4/Button" to="Control/PopupManager/popup4" method="dismiss"]
+[connection signal="pressed" from="Control/PopupManager/popup5/Button" to="Control/PopupManager/popup5" method="dismiss"]

@@ -1,24 +1,52 @@
-[gd_scene load_steps=6 format=3 uid="uid://butc3tcibnwvv"]
+[gd_scene load_steps=13 format=3 uid="uid://butc3tcibnwvv"]
 
 [ext_resource type="Script" uid="uid://nh7w54v546xr" path="res://Scenes/spork_rotation/spork_rotator.gd" id="1_q7hob"]
+[ext_resource type="PackedScene" uid="uid://0w5b3c2o4mjy" path="res://ArtAssets/model/sporkMoustache.glb" id="2_qh4ij"]
+[ext_resource type="PackedScene" uid="uid://cadov4tixl8ch" path="res://ArtAssets/model/sporkBendy.glb" id="3_psfhf"]
+[ext_resource type="PackedScene" uid="uid://de65q15mbwu2w" path="res://ArtAssets/model/sporkDouble.glb" id="4_4l4p8"]
+[ext_resource type="PackedScene" uid="uid://b0iwjky2bvw0a" path="res://ArtAssets/model/sporkFairy.glb" id="5_o0cn3"]
+[ext_resource type="PackedScene" uid="uid://di285ghpyfibx" path="res://ArtAssets/model/sporkLowpoly.glb" id="6_pe3qd"]
+[ext_resource type="PackedScene" uid="uid://cnxw3mkj4rxrh" path="res://ArtAssets/model/sporkWireframe.glb" id="7_hwa4n"]
+[ext_resource type="PackedScene" uid="uid://bav1k15a0nu3k" path="res://ArtAssets/model/sporkThatsnice.glb" id="8_ru0w0"]
+[ext_resource type="PackedScene" uid="uid://dflkm68krh5f0" path="res://ArtAssets/model/sporkMeow.glb" id="9_y5a6m"]
+[ext_resource type="PackedScene" uid="uid://lmxas0boi5qo" path="res://ArtAssets/model/sporkRegular.glb" id="10_pvwo0"]
+[ext_resource type="PackedScene" uid="uid://5gv8dkyro5g5" path="res://ArtAssets/model/sporkBlahaj.glb" id="11_701kl"]
+[ext_resource type="PackedScene" uid="uid://dsq7gruyj0djg" path="res://ArtAssets/model/sporkAngel.glb" id="12_4l4p8"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_iti4p"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dtjkg"]
-albedo_color = Color(0.360949, 0.360949, 0.360949, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_3up8h"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qh4ij"]
-albedo_color = Color(0.394987, 0.394987, 0.394987, 1)
-
-[node name="spork_model" type="MeshInstance3D"]
-transform = Transform3D(0.976672, 0.441281, 0, -0.214735, 2.00706, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_iti4p")
-surface_material_override/0 = SubResource("StandardMaterial3D_dtjkg")
+[node name="spork_model" type="MeshInstance3D" node_paths=PackedStringArray("sporks")]
+transform = Transform3D(0.976672, 0.214735, 0, -0.214735, 0.976672, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_q7hob")
+sporks = [NodePath("sporkWireframe2"), NodePath("sporkLowpoly2"), NodePath("sporkRegular2"), NodePath("sporkDouble2"), NodePath("sporkMoustache2"), NodePath("sporkBendy2"), NodePath("sporkThatsnice2"), NodePath("sporkBlahaj2"), NodePath("sporkFairy2"), NodePath("sporkAngel2")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.54, 0, 0, 0, 0.56, 0, 0, 0, 0.985, 4.02331e-09, 0.912247, 0)
-mesh = SubResource("BoxMesh_3up8h")
-surface_material_override/0 = SubResource("StandardMaterial3D_qh4ij")
+[node name="sporkMoustache2" parent="." instance=ExtResource("2_qh4ij")]
+visible = false
+
+[node name="sporkBendy2" parent="." instance=ExtResource("3_psfhf")]
+visible = false
+
+[node name="sporkDouble2" parent="." instance=ExtResource("4_4l4p8")]
+visible = false
+
+[node name="sporkFairy2" parent="." instance=ExtResource("5_o0cn3")]
+visible = false
+
+[node name="sporkLowpoly2" parent="." instance=ExtResource("6_pe3qd")]
+visible = false
+
+[node name="sporkWireframe2" parent="." instance=ExtResource("7_hwa4n")]
+visible = false
+
+[node name="sporkThatsnice2" parent="." instance=ExtResource("8_ru0w0")]
+visible = false
+
+[node name="sporkMeow2" parent="." instance=ExtResource("9_y5a6m")]
+visible = false
+
+[node name="sporkBlahaj2" parent="." instance=ExtResource("11_701kl")]
+visible = false
+
+[node name="sporkRegular2" parent="." instance=ExtResource("10_pvwo0")]
+visible = false
+
+[node name="sporkAngel2" parent="." instance=ExtResource("12_4l4p8")]
+visible = false

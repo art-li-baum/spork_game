@@ -1,74 +1,83 @@
-[gd_scene load_steps=9 format=3 uid="uid://bb8d5rqlhrtpj"]
+[gd_scene load_steps=20 format=3 uid="uid://bb8d5rqlhrtpj"]
 
-[ext_resource type="Theme" uid="uid://cbjrsujbntlxe" path="res://Resources/ascii_ui_theme.tres" id="1_iti4p"]
+[ext_resource type="PackedScene" uid="uid://bdd6nit408p80" path="res://Scenes/canvas_layer.tscn" id="1_rsyfn"]
 [ext_resource type="PackedScene" uid="uid://butc3tcibnwvv" path="res://Scenes/spork_rotation/spork_model.tscn" id="2_dtjkg"]
-[ext_resource type="Script" uid="uid://bn12bodnlk1aw" path="res://Scenes/spork_rotation/rotate_button.gd" id="2_eglq2"]
-[ext_resource type="Script" uid="uid://dea8jq3sut8qu" path="res://Scenes/spork_rotation/total_rotations_label.gd" id="2_rsyfn"]
 [ext_resource type="SpriteFrames" uid="uid://be7q6ghdd71h7" path="res://Resources/ascii_spork_sprite_frames.tres" id="5_btda1"]
+[ext_resource type="Texture2D" uid="uid://bfiposoer2wrd" path="res://ArtAssets/backgrounds/Upgrade4_Background_Cute.png" id="5_xq3o0"]
+[ext_resource type="Script" uid="uid://bx8eydogs8v8j" path="res://Scenes/upgrades/background.gd" id="6_2yvf5"]
+[ext_resource type="Texture2D" uid="uid://ddpn5iak02460" path="res://ArtAssets/backgrounds/Upgrade4_Background_Edgy.png" id="7_2yvf5"]
 [ext_resource type="Script" uid="uid://cmf7w8vndnrj5" path="res://Scenes/spork_rotation/ascii_spork_rotator.gd" id="7_8v7by"]
+[ext_resource type="Texture2D" uid="uid://c8o8au8trq6y3" path="res://ArtAssets/backgrounds/Upgrade4_Background_Fun.png" id="8_3ihge"]
+[ext_resource type="Script" uid="uid://c4o0d7w4j35r5" path="res://Scenes/upgrades/pointer.gd" id="9_1rqgg"]
+[ext_resource type="Texture2D" uid="uid://bkvn1jrvjjn32" path="res://ArtAssets/GalaxyEndgame.png" id="9_mwmob"]
+[ext_resource type="Texture2D" uid="uid://cxqd0j6os5gx8" path="res://ArtAssets/pointers/Upgrade6_PointerCuteSmaller.png" id="10_1rqgg"]
+[ext_resource type="Script" uid="uid://dhavpw1s1hajn" path="res://Scenes/galaxy.gd" id="10_so54a"]
+[ext_resource type="Texture2D" uid="uid://opov6ylsc0aa" path="res://ArtAssets/pointers/Upgrade6_PointerEdgySmaller.png" id="11_mwmob"]
+[ext_resource type="Texture2D" uid="uid://rl3n82ybgbac" path="res://ArtAssets/pointers/Upgrade6_PointerFunSmaller.png" id="12_so54a"]
 
-[sub_resource type="Environment" id="Environment_dtjkg"]
-background_mode = 1
-background_color = Color(1, 1, 1, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mwmob"]
+ground_bottom_color = Color(0.331836, 0.285831, 0.232454, 1)
+energy_multiplier = 1.56
 
-[sub_resource type="Environment" id="Environment_eglq2"]
-background_mode = 1
+[sub_resource type="Sky" id="Sky_mwmob"]
+sky_material = SubResource("ProceduralSkyMaterial_mwmob")
+
+[sub_resource type="Environment" id="Environment_1rqgg"]
+background_mode = 2
 background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_mwmob")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 16.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_mwmob"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_so54a"]
+shading_mode = 0
 
 [node name="test_level" type="Node3D"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-custom_minimum_size = Vector2(1280, 720)
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1.0
-offset_top = -1.0
-offset_right = 1281.0
-offset_bottom = 719.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("1_iti4p")
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 35.0
-offset_top = 21.0
-offset_right = 434.0
-offset_bottom = 144.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-
-[node name="TotalRotations" type="RichTextLabel" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(100, 23.69)
-layout_mode = 2
-theme = ExtResource("1_iti4p")
-text = "sportk rotations"
-script = ExtResource("2_rsyfn")
-
-[node name="RotateButton" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Rotate Spork
-"
-script = ExtResource("2_eglq2")
+[node name="CanvasLayer" parent="." instance=ExtResource("1_rsyfn")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-environment = SubResource("Environment_dtjkg")
+metadata/_edit_lock_ = true
 
 [node name="spork_model" parent="." instance=ExtResource("2_dtjkg")]
 unique_name_in_owner = true
-transform = Transform3D(0.976672, 0.441281, 0, -0.214735, 2.00706, 0, 0, 0, 1, 0, 0, -5.37355)
-visible = false
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_eglq2")
+transform = Transform3D(0.976672, 0.214735, 1.6079e-08, -0.209823, 0.954333, 0.212656, 0.0456645, -0.207695, 0.977127, -0.186811, 0, -2.69139)
 
 [node name="ASCII_spork" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.099)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.281824, 0, -5.099)
 sprite_frames = ExtResource("5_btda1")
 animation = &"rotate"
 script = ExtResource("7_8v7by")
+
+[node name="background" type="Sprite3D" parent="."]
+transform = Transform3D(1.605, 0, 0, 0, 1.605, 0, 0, 0, 1.605, 0, 0, -11.2186)
+script = ExtResource("6_2yvf5")
+cute = ExtResource("5_xq3o0")
+spooky = ExtResource("7_2yvf5")
+fun = ExtResource("8_3ihge")
+
+[node name="galaxy" type="Sprite3D" parent="."]
+transform = Transform3D(1.605, 0, 0, 0, 1.605, 0, 0, 0, 1.605, 0, 0, -11.0053)
+visible = false
+texture = ExtResource("9_mwmob")
+script = ExtResource("10_so54a")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.473347, 0.567226, -0.673942, -0.189617, 0.812757, 0.550882, 0.860226, -0.132968, 0.492271, 0, 0.106883, 0)
+light_indirect_energy = 14.607
+
+[node name="cursor" type="Node" parent="."]
+script = ExtResource("9_1rqgg")
+cute = ExtResource("10_1rqgg")
+spooky = ExtResource("11_mwmob")
+fun = ExtResource("12_so54a")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1rqgg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(127.455, 0, 0, 0, 127.455, 0, 0, 0, 127.455, 0, 0, -29.3237)
+mesh = SubResource("QuadMesh_mwmob")
+surface_material_override/0 = SubResource("StandardMaterial3D_so54a")

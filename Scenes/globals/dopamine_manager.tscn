@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://g1gtbmum7l5j"]
+
+[ext_resource type="Script" uid="uid://eroefcfte7eb" path="res://Scenes/globals/dopamine_manager.gd" id="1_kgj57"]
+
+[node name="DopamineManager" type="Node"]
+script = ExtResource("1_kgj57")

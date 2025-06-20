@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Aesthetic" load_steps=6 format=3 uid="uid://c73dvqdjq57tr"]
+
+[ext_resource type="Texture2D" uid="uid://ddpn5iak02460" path="res://ArtAssets/backgrounds/Upgrade4_Background_Edgy.png" id="1_tuttg"]
+[ext_resource type="Texture2D" uid="uid://cscp3aci33g4p" path="res://ArtAssets/pointers/Upgrade6_PointerEdgy.png" id="2_w0y8m"]
+[ext_resource type="Script" uid="uid://bfgww8kjlvced" path="res://Resources/aesthetics/aesthetic.gd" id="3_leq1i"]
+[ext_resource type="Texture2D" uid="uid://8sj66pa7wivk" path="res://ArtAssets/titles/Upgrade2_Subtitle_Edgy.png" id="4_3gn6o"]
+[ext_resource type="Texture2D" uid="uid://d127o88d7n5q1" path="res://ArtAssets/titles/Upgrade1_Title_Edgy.png" id="5_dcss0"]
+
+[resource]
+script = ExtResource("3_leq1i")
+background = ExtResource("1_tuttg")
+ham_gif_path = "res://Scenes/gifs/hampster.tscn"
+pointer = ExtResource("2_w0y8m")
+title = ExtResource("5_dcss0")
+sub_title = ExtResource("4_3gn6o")

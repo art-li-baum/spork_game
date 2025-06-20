@@ -1,9 +1,17 @@
 extends AnimatedSprite3D
 
+var spin :float = 0
 
 func _ready() -> void:
-	RotationManager._spork_rotate.connect(rotate_spork)
-	ActionList.add_action(SporkTestMove.new(self))
+	RotationManager.spork_rotate.connect(rotate_spork)
+	ProgressManager.new_spork.connect(upgrade)
+	#TEST ActionList.add_action(SporkAction.SporkTestMove.new(self))
+
+func upgrade(level:int):
+	visible = false
 
 func rotate_spork(delta:float)->void:
-	frame = (frame + int(delta)) % 6
+	spin += delta * 6 
+	if(spin >= 1):
+		spin = 0
+		frame = (frame + 1 ) % 6

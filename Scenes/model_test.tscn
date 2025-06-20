@@ -1,0 +1,105 @@
+[gd_scene load_steps=22 format=3 uid="uid://cq0g6s86wxh36"]
+
+[ext_resource type="PackedScene" uid="uid://cadov4tixl8ch" path="res://ArtAssets/model/sporkBendy.glb" id="5_gq5kl"]
+[ext_resource type="Script" uid="uid://bx8eydogs8v8j" path="res://Scenes/upgrades/background.gd" id="5_prb1c"]
+[ext_resource type="Texture2D" uid="uid://bfiposoer2wrd" path="res://ArtAssets/backgrounds/Upgrade4_Background_Cute.png" id="6_knqat"]
+[ext_resource type="Script" uid="uid://dc6ujcb40rdh7" path="res://ArtAssets/model/test_rotator.gd" id="6_xlj1e"]
+[ext_resource type="Texture2D" uid="uid://ddpn5iak02460" path="res://ArtAssets/backgrounds/Upgrade4_Background_Edgy.png" id="7_bspp3"]
+[ext_resource type="PackedScene" uid="uid://5gv8dkyro5g5" path="res://ArtAssets/model/sporkBlahaj.glb" id="7_prb1c"]
+[ext_resource type="Texture2D" uid="uid://c8o8au8trq6y3" path="res://ArtAssets/backgrounds/Upgrade4_Background_Fun.png" id="8_is06t"]
+[ext_resource type="PackedScene" uid="uid://de65q15mbwu2w" path="res://ArtAssets/model/sporkDouble.glb" id="8_knqat"]
+[ext_resource type="PackedScene" uid="uid://b0iwjky2bvw0a" path="res://ArtAssets/model/sporkFairy.glb" id="9_bspp3"]
+[ext_resource type="PackedScene" uid="uid://di285ghpyfibx" path="res://ArtAssets/model/sporkLowpoly.glb" id="10_is06t"]
+[ext_resource type="PackedScene" uid="uid://dflkm68krh5f0" path="res://ArtAssets/model/sporkMeow.glb" id="11_18gau"]
+[ext_resource type="PackedScene" uid="uid://0w5b3c2o4mjy" path="res://ArtAssets/model/sporkMoustache.glb" id="12_xx1u4"]
+[ext_resource type="PackedScene" uid="uid://lmxas0boi5qo" path="res://ArtAssets/model/sporkRegular.glb" id="13_wybfh"]
+[ext_resource type="PackedScene" uid="uid://bav1k15a0nu3k" path="res://ArtAssets/model/sporkThatsnice.glb" id="14_yg1sh"]
+[ext_resource type="PackedScene" uid="uid://cnxw3mkj4rxrh" path="res://ArtAssets/model/sporkWireframe.glb" id="15_khk87"]
+[ext_resource type="PackedScene" uid="uid://dsq7gruyj0djg" path="res://ArtAssets/model/sporkAngel.glb" id="16_xlj1e"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mwmob"]
+ground_bottom_color = Color(0.331836, 0.285831, 0.232454, 1)
+energy_multiplier = 1.56
+
+[sub_resource type="Sky" id="Sky_mwmob"]
+sky_material = SubResource("ProceduralSkyMaterial_mwmob")
+
+[sub_resource type="Environment" id="Environment_1rqgg"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_mwmob")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 16.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_mwmob"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_so54a"]
+shading_mode = 0
+
+[node name="mtest_level" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="background" type="Sprite3D" parent="."]
+transform = Transform3D(1.605, 0, 0, 0, 1.605, 0, 0, 0, 1.605, 0, 0, -11.2186)
+script = ExtResource("5_prb1c")
+cute = ExtResource("6_knqat")
+spooky = ExtResource("7_bspp3")
+fun = ExtResource("8_is06t")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.473347, 0.567226, -0.673942, -0.189617, 0.812757, 0.550882, 0.860226, -0.132968, 0.492271, 0, 0.106883, 0)
+light_indirect_energy = 14.607
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1rqgg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(79.145, 0, 0, 0, 79.145, 0, 0, 0, 79.145, 0, 0, -29.3237)
+mesh = SubResource("QuadMesh_mwmob")
+surface_material_override/0 = SubResource("StandardMaterial3D_so54a")
+
+[node name="sporkBendy2" parent="." instance=ExtResource("5_gq5kl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -3)
+script = ExtResource("6_xlj1e")
+
+[node name="sporkBlahaj2" parent="." instance=ExtResource("7_prb1c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, -3)
+script = ExtResource("6_xlj1e")
+
+[node name="sporkDouble2" parent="." instance=ExtResource("8_knqat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -3)
+script = ExtResource("6_xlj1e")
+
+[node name="sporkFairy2" parent="." instance=ExtResource("9_bspp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -3)
+script = ExtResource("6_xlj1e")
+
+[node name="sporkLowpoly2" parent="." instance=ExtResource("10_is06t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -3)
+script = ExtResource("6_xlj1e")
+
+[node name="sporkMeow2" parent="." instance=ExtResource("11_18gau")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1, -3)
+script = ExtResource("6_xlj1e")
+
+[node name="sporkMoustache2" parent="." instance=ExtResource("12_xx1u4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -3)
+script = ExtResource("6_xlj1e")
+
+[node name="sporkRegular2" parent="." instance=ExtResource("13_wybfh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -3)
+script = ExtResource("6_xlj1e")
+
+[node name="sporkThatsnice2" parent="." instance=ExtResource("14_yg1sh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
+script = ExtResource("6_xlj1e")
+
+[node name="sporkWireframe2" parent="." instance=ExtResource("15_khk87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3)
+script = ExtResource("6_xlj1e")
+
+[node name="sporkAngel2" parent="." instance=ExtResource("16_xlj1e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51812, 0.918808, -3)
+script = ExtResource("6_xlj1e")
